@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pr3_Zubarev</string>
+    <string name="linear_activity">Linear activity</string>
+    <string name="frame">Frame</string>
+    <string name="relative">Relative</string>
+    <string name="linear">Linear</string>
+    <string name="constrain">Constrain</string>
+    <string name="back">назад</string>
+    <string name="input_field">поле ввода</string>
+    <string name="constraintlayout">ConstraintLayout</string>
+    <string name="linearlayout">LinearLayout</string>
+    <string name="framelayout">FrameLayout</string>
+    <string name="relativelayout">RelativeLayout</string>
+</resources>

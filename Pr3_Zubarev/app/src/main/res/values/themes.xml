@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Pr3_Zubarev" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name = "android:background">@color/blue</item>
+    </style>
+    <style name="Theme.Pr3_Zubarev" parent="Base.Theme.Pr3_Zubarev" />
+</resources>

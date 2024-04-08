@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pr4_Zubarev</string>
+    <string name="surname">surname</string>
+    <string name="name">name</string>
+    <string name="next">Next</string>
+    <string name="subject">subject</string>
+    <string name="enter">Enter</string>
+    <string name="date">date</string>
+    <string name="time">time</string>
+    <string name="comment">comment</string>
+    <string name="ok">OK</string>
+</resources>
