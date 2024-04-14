@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pr1_Zubarev</string>
+    <string name="text">text example</string>
+    <string name="button">example button</string>
+    <string name="input">input field</string>
+    <string name="picture">picture</string>
+    <string name="ezhik">ezhik</string>
+</resources>
+
