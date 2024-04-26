@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/capibara"
+            android:icon="@drawable/capibara"
+            android:title="capibara" />
+        <item
+            android:id="@+id/enot"
+            android:icon="@drawable/enot"
+            android:title="Enot" />
+        <item
+            android:id="@+id/ezhik"
+            android:icon="@drawable/ezhik"
+            android:title="Ezhik" />
+        <item
+            android:id="@+id/nav_second_activity"
+            android:icon="@drawable/second_icon"
+            android:title="Second Activity" />
+
+    </group>
+
+</menu>
