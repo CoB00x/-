@@ -1,4 +1,4 @@
-package com.example.mobile6;
+package com.example.Pr6_Zubarev;
 
 import org.junit.Test;
 

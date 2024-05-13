@@ -1,11 +1,11 @@
-package com.example.mobile6;
+package com.example.Pr6_Zubarev;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import android.view.Menu;
+
 import android.view.MenuItem;
 import android.widget.TextView;
 
