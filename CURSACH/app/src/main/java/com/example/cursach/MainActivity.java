@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.nav_change_profile) {
-                    //startActivity(new Intent(MainActivity.this, FavoritesActivity.class));
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                 } else if (id == R.id.nav_about) {
                     startActivity(new Intent(MainActivity.this, AboutActivity.class));
                 } else if (id == R.id.nav_author) {
