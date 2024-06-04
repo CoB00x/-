@@ -4,15 +4,15 @@
     <!-- Главная группа -->
     <group android:id="@+id/group_main">
         <item
-            android:id="@+id/change_profile"
+            android:id="@+id/nav_change_profile"
             android:icon="@drawable/ic_profile_name"
             android:title="Профиль" />
         <item
-            android:id="@+id/nav_main"
+            android:id="@+id/nav_about"
             android:icon="@drawable/ic_info_name"
             android:title="О приложении" />
         <item
-            android:id="@+id/nav_autor"
+            android:id="@+id/nav_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@android:drawable/stat_sys_headset"
@@ -22,17 +22,17 @@
     <!-- Вторая группа -->
     <group android:id="@+id/group_main_sections">
         <item
-            android:id="@+id/nav_settings"
+            android:id="@+id/nav_main"
+            android:icon="@drawable/ic_home"
+            android:title="Главная" />
+        <item
+            android:id="@+id/nav_search"
             android:icon="@drawable/ic_search_name"
             android:title="Поиск" />
         <item
-            android:id="@+id/nav_sight"
+            android:id="@+id/nav_cart"
             android:icon="@drawable/ic_cart_name"
             android:title="Корзина" />
-        <item
-            android:id="@+id/nav_favorites"
-            android:icon="@drawable/ic_favourite_name"
-            android:title="Избранное" />
     </group>
 
 </menu>

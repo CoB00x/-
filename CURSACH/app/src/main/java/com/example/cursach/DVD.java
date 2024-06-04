@@ -1,6 +1,8 @@
 package com.example.cursach;
 
-public class DVD {
+import java.io.Serializable;
+
+public class DVD implements Serializable {
     private String name;
     private int img;
     private String info;
