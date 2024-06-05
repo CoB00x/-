@@ -1,7 +1,5 @@
 package com.example.cursach;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -12,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -53,8 +50,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         TextView about;
         ImageView imageView;
         DVD dvd;
+        String profile;
         ViewHolder(View view, Context context) {
             super(view);
+
             name = view.findViewById(R.id.item_name);
             about = view.findViewById(R.id.item_about);
             imageView = view.findViewById(R.id.item_image);
@@ -67,6 +66,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     context.startActivity(intent);
                 }
             });
+
         }
     }
 }

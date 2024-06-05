@@ -13,8 +13,9 @@
         android:theme="@style/Theme.CURSACH"
         tools:targetApi="31">
         <activity
-            android:name=".SearchActivity"
-            android:exported="false" />
+            android:name=".CartActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity
             android:name=".LoginActivity"
             android:exported="false"

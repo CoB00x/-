@@ -35,12 +35,12 @@ public class LoginActivity extends AppCompatActivity {
                 ti = findViewById(R.id.input_password);
                 String pass = ti.getEditText().getText().toString();
                 Intent intent = new Intent();
-                if (login.equals("admin") && pass.equals("123")){
-                    intent.putExtra("profile", "admin");
+                if (login.equals("user2") && pass.equals("123")){
+                    intent.putExtra("profile", "user2");
                     setResult(RESULT_OK, intent);
                     finish();
-                } else if (login.equals("user") && pass.equals("123")) {
-                    intent.putExtra("profile", "user");
+                } else if (login.equals("user1") && pass.equals("123")) {
+                    intent.putExtra("profile", "user1");
                     setResult(RESULT_OK, intent);
                     finish();
                 } else {

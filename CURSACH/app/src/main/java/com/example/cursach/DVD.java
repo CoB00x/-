@@ -1,5 +1,8 @@
 package com.example.cursach;
 
+import android.widget.ImageView;
+
+import java.io.PrintStream;
 import java.io.Serializable;
 
 public class DVD implements Serializable {
@@ -7,7 +10,6 @@ public class DVD implements Serializable {
     private int img;
     private String info;
     private double price;
-    private boolean favourite = false;
 
     public DVD(String name, int img, String info, double price) {
         this.name = name;
@@ -48,11 +50,4 @@ public class DVD implements Serializable {
         this.price = price;
     }
 
-    public boolean isFavourite() {
-        return favourite;
-    }
-
-    public void setFavourite(boolean favourite) {
-        this.favourite = favourite;
-    }
 }

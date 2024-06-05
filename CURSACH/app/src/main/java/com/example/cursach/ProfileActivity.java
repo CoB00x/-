@@ -71,10 +71,8 @@ public class ProfileActivity extends AppCompatActivity {
                     startActivity(new Intent(ProfileActivity.this,DeveloperActivity.class));
                 }  else if (id == R.id.nav_main) {
                     startActivity(new Intent(ProfileActivity.this, MainActivity.class));
-                } else if (id == R.id.nav_search) {
-                    //startActivity(new Intent(MainActivity.this, SearchActivity.class));
-                } else if (id == R.id.nav_cart) {
-                    //startActivity(new Intent(MainActivity.this, MainActivity.class));
+                }  else if (id == R.id.nav_cart) {
+                    startActivity(new Intent(ProfileActivity.this, CartActivity.class));
                 }
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
@@ -187,11 +185,11 @@ public class ProfileActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn_profile);
         img = findViewById(R.id.img_profile);
         TextView name = findViewById(R.id.name_profile);
-        if (profile.equals("admin")){
+        if (profile.equals("user2")){
             img.setImageResource(R.drawable.admin);
             btn.setText("Сменить профиль");
             out.setVisibility(View.VISIBLE);
-        } else if (profile.equals("user")){
+        } else if (profile.equals("user1")){
             img.setImageResource(R.drawable.user);
             btn.setText("Сменить профиль");
             out.setVisibility(View.VISIBLE);

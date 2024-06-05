@@ -50,10 +50,8 @@ public class DeveloperActivity extends AppCompatActivity {
                     startActivity(new Intent(DeveloperActivity.this, AboutActivity.class));
                 }  else if (id == R.id.nav_main) {
                     startActivity(new Intent(DeveloperActivity.this, MainActivity.class));
-                } else if (id == R.id.nav_search) {
-                    //startActivity(new Intent(MainActivity.this, SearchActivity.class));
-                } else if (id == R.id.nav_cart) {
-                    //startActivity(new Intent(MainActivity.this, MainActivity.class));
+                }  else if (id == R.id.nav_cart) {
+                    startActivity(new Intent(DeveloperActivity.this, CartActivity.class));
                 }
                 drawer.closeDrawer(GravityCompat.START);
                 return true;

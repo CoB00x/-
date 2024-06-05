@@ -49,10 +49,8 @@ public class AboutActivity extends AppCompatActivity {
                     startActivity(new Intent(AboutActivity.this,DeveloperActivity.class));
                 }  else if (id == R.id.nav_main) {
                     startActivity(new Intent(AboutActivity.this, MainActivity.class));
-                } else if (id == R.id.nav_search) {
-                    //startActivity(new Intent(MainActivity.this, SearchActivity.class));
-                } else if (id == R.id.nav_cart) {
-                    //startActivity(new Intent(MainActivity.this, MainActivity.class));
+                }  else if (id == R.id.nav_cart) {
+                    startActivity(new Intent(AboutActivity.this, CartActivity.class));
                 }
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
