@@ -4,8 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,9 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -28,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawer;
     public ActionBarDrawerToggle toggle;
+    List<DVD> DVDs;
+    List<String> names;
 
 
     @Override
@@ -73,11 +81,78 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        List<DVD> DVDs = setDVDs();
+        DVDs = setDVDs();
         RecyclerView recyclerView = findViewById(R.id.recycler_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        RecyclerAdapter adapter = new RecyclerAdapter(DVDs, MainActivity.this);
-        recyclerView.setAdapter(adapter);
+        RecyclerAdapter MyAdapter = new RecyclerAdapter(DVDs, MainActivity.this);
+        recyclerView.setAdapter(MyAdapter);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate menu with items using MenuInflator
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_menu, menu);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, names);
+        ListView listView = findViewById(R.id.search_list);
+        listView.setAdapter(adapter);
+
+        // Initialise menu item search bar
+        // with id and take its object
+        MenuItem searchViewItem = menu.findItem(R.id.search_bar);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selected_name = listView.getItemAtPosition(position).toString();
+                for (int i = 0; i < names.size(); i++){
+                    Log.i("qwe", DVDs.get(0).getName());
+                    if (DVDs.get(i).getName().equals(selected_name)){
+                        Log.i("qwe","qwe");
+                        Intent intent = new Intent(MainActivity.this, ItemActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.putExtra("DVD", DVDs.get(i));
+                        startActivity(intent);
+                    }
+                }
+            }
+        });
+        // attach setOnQueryTextListener
+        // to search view defined above
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            // Override onQueryTextSubmit method which is call when submit query is searched
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // If the list contains the search query than filter the adapter
+                // using the filter method with the query as its argument
+                if (names.contains(query)) {
+                    adapter.getFilter().filter(query);
+                } else {
+                    // Search query not found in List View
+                    Toast.makeText(MainActivity.this, "Not found", Toast.LENGTH_LONG).show();
+                }
+                return false;
+            }
+
+            // This method is overridden to filter the adapter according
+            // to a search query when the user is typing search
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                listView.setVisibility(View.VISIBLE);
+                RecyclerView rv = findViewById(R.id.recycler_list);
+                rv.setVisibility(View.GONE);
+                adapter.getFilter().filter(newText);
+                if (newText.equals("")){
+                    listView.setVisibility(View.GONE);
+                    rv.setVisibility(View.VISIBLE);
+                }
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -96,6 +171,10 @@ public class MainActivity extends AppCompatActivity {
         list.add(new DVD("Тачки", R.drawable.cars, getResources().getString(R.string.cars), 279));
         list.add(new DVD("Хлодное сердце", R.drawable.frozen, getResources().getString(R.string.frozen), 321));
         list.add(new DVD("Шрек", R.drawable.shrek, getResources().getString(R.string.shrek), 333));
+        names = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++){
+            names.add(list.get(i).getName());
+        }
         return list;
     }
 }

@@ -7,14 +7,13 @@
     android:layout_height="match_parent"
     tools:openDrawer="start">
 
-    <LinearLayout
+    <!-- RecyclerView с баннерами -->
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/search_list"
+        android:visibility="gone"/>
 
-    </LinearLayout>
-
-    <!-- RecyclerView с баннерами -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_list"
         android:layout_width="match_parent"
@@ -31,6 +30,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu" />
+        app:menu="@menu/drawer_menu" >
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
